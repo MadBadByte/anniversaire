@@ -1,0 +1,64 @@
+/*
+ * ===== POLICES LOCALES =====
+ * Ce fichier charge les polices stockées dans le dossier /fonts/
+ * Les formats WOFF2 sont optimisés pour le web
+ */
+
+/* 1. PACIFICO (pour les titres) */
+@font-face {
+    font-family: 'Pacifico'; /* Nom de la police */
+    src: url('../fonts/Pacifico-Regular.woff2') format('woff2'); /* Chemin vers le fichier */
+    font-weight: normal; /* Poids normal */
+    font-style: normal; /* Style normal */
+    font-display: swap; /* Affiche une police système en attendant le chargement */
+}
+
+/* 2. COMIC NEUE REGULAR (pour le texte) */
+@font-face {
+    font-family: 'Comic Neue';
+    src: url('../fonts/ComicNeue-Regular.woff2') format('woff2');
+    font-weight: 400; /* Poids normal */
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 3. COMIC NEUE BOLD (pour le texte en gras) */
+@font-face {
+    font-family: 'Comic Neue';
+    src: url('../fonts/ComicNeue-Bold.woff2') format('woff2');
+    font-weight: 700; /* Poids gras */
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 4. INDIE FLOWER (pour les messages) */
+@font-face {
+    font-family: 'Indie Flower';
+    src: url('../fonts/IndieFlower-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 5. POLICE UNIQUE (Comic Neue Regular - TTF pour compatibilité) */
+@font-face {
+    font-family: 'ComicNeue';
+    src: url('../fonts/ComicNeue-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/*
+ * ===== VARIABLES CSS =====
+ * Définition des polices pour une utilisation facile dans le projet
+ */
+:root {
+    /* Polices originales */
+    --font-title: 'Pacifico', cursive; /* Police pour les titres */
+    --font-text: 'Comic Neue', cursive; /* Police pour le texte */
+    --font-handwritten: 'Indie Flower', cursive; /* Police pour les messages */
+
+    /* Nouvelle police unique (prioritaire) */
+    --font-main: 'ComicNeue', 'Comic Neue', cursive, sans-serif;
+}

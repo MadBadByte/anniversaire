@@ -1,0 +1,173 @@
+/* ===== BASE ===== */
+.page {
+    font-family: var(--font-main);
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fde2e4, #e2f0fd);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+}
+
+.page__container {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* ===== TITRE ===== */
+.page__title {
+    color: #ff6b9d;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+.page__name {
+    color: #6e8efb;
+}
+
+/* ===== BLOC GÂTEAU ===== */
+.cake__wrapper {
+    margin: 30px auto;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+}
+
+.cake {
+    position: relative;
+    width: 100%;
+}
+
+.cake__frame {
+    position: relative;
+    width: 100%;
+    padding-bottom: 75%; /* Ratio 4:3 pour mieux afficher les gâteaux */
+    overflow: hidden;
+    border-radius: 10px;
+    background: #fff8f8;
+}
+
+.cake__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Affiche l'image complète */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.cake__image--1 {
+    opacity: 1;
+}
+
+.cake__blow-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+/* ===== BLOC BOUTON ===== */
+.button {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 20px auto;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+}
+
+.button__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s ease;
+}
+
+.button__image--normal {
+    opacity: 1;
+}
+
+.button__image--hover,
+.button__image--active {
+    opacity: 0;
+}
+
+.button:hover .button__image--normal {
+    opacity: 0;
+}
+
+.button:hover .button__image--hover {
+    opacity: 1;
+}
+
+.button:active .button__image--active {
+    opacity: 1;
+}
+
+/* ===== MESSAGE ===== */
+.message {
+    margin-top: 30px;
+    padding: 20px;
+    background: #fff0f5;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.message--visible {
+    opacity: 1;
+}
+
+.message__title {
+    color: #ff6b9d;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.message__text {
+    color: #666;
+    font-size: 1.2rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+    .page__container {
+        padding: 15px;
+    }
+
+    .page__title {
+        font-size: 1.8rem;
+    }
+
+    .cake__frame {
+        padding-bottom: 60%;
+    }
+
+    .button {
+        width: 100px;
+        height: 100px;
+    }
+}
